@@ -1,0 +1,13 @@
+nav{
+  position: fixed;
+  background-color: rgba(0,0,0,0);
+  color: black;
+}
+#landingPage{
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  top: 0;
+  background-color: gold;
+}
