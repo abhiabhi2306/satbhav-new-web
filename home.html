@@ -11,26 +11,59 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/scripts.js" async defer></script>
-  <script type="text/javascript" src="js/materialize.min.js" async defer></script>
+  <link type="text/css" rel="stylesheet" href="css/styles.css">
+  <link type="text/css" rel="stylesheet" href="css/icons.css">
+  <link type="text/css" rel="stylesheet" href="css/fonts.css">
+  <script type="text/javascript" src="js/materialize.min.js" async="true" defer="true"></script>
+  <script type="text/javascript" src="js/particles.min.js"></script>
+  <script type="text/javascript" src="js/particles.js" async="true" defer="true"></script>
+  <script type="text/javascript" src="js/menu.js" async="true" defer="true"></script>
+
 
 </head>
 
 <body>
+
   <nav class="navbar-fixed">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><img src="images/logo.png" class="logo"></a>
+      <a href="#" class="brand-logo"><img src="images/universitylogo.png" class="logo"></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="#">Tech Team</a></li>
         <li><a href="#">Talk To Us</a></li>
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
       </ul>
     </div>
   </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Tech Team</a></li>
+    <li><a href="#">Talk To Us</a></li>
+  </ul>
   <div id="landingPage">
+    <div class="particles-wrapper">
+      <div id="particles-js"></div>
+      <img src="images/satlogoGlow.png" id="sat_logo">
+      <span><p>Build on Values|Enhance Potential</p>
+      <p>Department of Computer Science and Application</p><span>
+    </div>
+    <div id="border">
+    </div>
+    <div id="border2">
+      <div class='icon-scroll'></div>
+    </div>
   </div>
+  <div id="spacer" style="width:100vw; height:100vh; background-color:white;"></div>
+  <div id="spacer" style="width:100vw; height:100vh; background-color:white;"></div>
+
 </body>
 </html>

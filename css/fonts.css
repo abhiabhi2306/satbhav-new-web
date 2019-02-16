@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Prototype;
+    src: url("../fonts/Prototype.ttf") format("truetype");
+}
+@font-face {
+    font-family: Quicksand;
+    src: url("../fonts/Quicksand_Book.otf") format("opentype");
+}
+@font-face {
+    font-family: Quicksand;
+    font-weight: bold;
+    src: url("../fonts/Quicksand_Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: Quicksand;
+    font-weight: lighter;
+    src: url("../fonts/Quicksand_Light.otf") format("opentype");
+}
+*{
+  font-family: Quicksand;
+}
