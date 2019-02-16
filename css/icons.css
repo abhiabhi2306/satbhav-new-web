@@ -13,6 +13,7 @@
 	margin-top: -30px;
 	box-shadow: inset 0 0 0 1px #000;
 	border-radius: 25px;
+	transition: 1s;
 }
 
 .icon-scroll:before {

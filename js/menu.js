@@ -2,15 +2,24 @@
 screenWidth = window.screen.width;
 screenHeight = window.screen.height;
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
+
+  $(document).ready(function () {
+    $(".button-collapse").sideNav({
+      menuWidth: 300,
+      closeOnClick: true,
+      edge: 'right', // <--- CHECK THIS OUT
+    });
   });
 
 window.addEventListener("scroll", function(){
-  if (document.body.scrollTop > screenHeight || document.documentElement.scrollTop > screenHeight) {
-    document.querySelector("navbar-fixed").style.background = "rgba(50,50,250,0.9);";
+  if (document.body.scrollTop > (3.3 * (screenHeight/5)) || document.documentElement.scrollTop > (3.3 * (screenHeight/5))) {
+    document.querySelector(".navbar-color").style.backgroundImage = " url(images/landingBKG.svg)";
   } else {
-    document.querySelector("navbar-fixed").style.background = "rgba(200,200,200,0.3);";
+    document.querySelector(".navbar-color").style.backgroundImage = "";
   }
+    if (document.body.scrollTop > (1 * (screenHeight/5)) || document.documentElement.scrollTop > (1 * (screenHeight/5))) {
+      document.querySelector(".icon-scroll").style.opacity = "0";
+    } else {
+      document.querySelector(".icon-scroll").style.opacity = "1";
+    }
 });

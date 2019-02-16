@@ -1,7 +1,11 @@
 
 nav{
   background: rgba(200,200,200,0.3);
-  position: fixed !important;
+}
+.navbar-color{
+  background-size: cover;
+  background-repeat: repeat;
+  transition: 0.5s;
 }
 .logo{
   padding: 12px;
@@ -18,10 +22,27 @@ nav ul li a:hover{
 nav ul li .active{
   text-decoration: underline;
 }
-@media only screen and (min-width: 993px){
+nav a.button-collapse{
+  visibility: hidden;
+}
+@media only screen and (max-width: 993px){
 nav a.button-collapse {
+  visibility: visible;
     display: block;
 }
+}
+#sidenav-overlay {
+    background-color: transparent;
+}
+.side-nav{
+  margin-top: 20vh;
+  background: none;
+  box-shadow: none;
+  width: 40vw;
+}
+.side-nav li>a{
+  color: white !important;
+  text-align: right;
 }
 .indicator{
   display: block;
@@ -54,6 +75,7 @@ nav a.button-collapse {
 .indicator.active{
   background-color: rgba(255,255,255,0.5);
 }
+
 #landingPage{
   display: block;
   position: absolute;
