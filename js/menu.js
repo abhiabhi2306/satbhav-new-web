@@ -1,7 +1,6 @@
 
 screenWidth = window.screen.width;
 screenHeight = window.screen.height;
-
 window.onload = function(){
   window.scrollTo(0,0);
 }
@@ -13,29 +12,32 @@ $(document).ready(function () {
     edge: 'right', // <--- CHECK THIS OUT
   });
 });
-
+function offset(el) {
+    var rect = el.getBoundingClientRect(),
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return rect.top + scrollTop;
+}
 window.addEventListener("scroll", function(){
+  console.log(document.documentElement.scrollTop);
   var indicator = document.querySelectorAll(".indicator");
   if (document.body.scrollTop > (0.8 * (screenHeight/2)) || document.documentElement.scrollTop > (0.8 * (screenHeight/2))) {
     document.querySelector(".navbar-color").style.backgroundImage = " url(images/landingBKG.svg)";
-    document.querySelector(".indicator.active").style.background = "rgba(0,0,0,0.5)";
     document.querySelector(".side-nav li>a").style.color = "black";
     for(i=0; i<indicator.length; i++){
       indicator[i].style.borderColor = "rgba(0,0,0,1)";
     }
   } else {
     document.querySelector(".navbar-color").style.backgroundImage = "";
-    document.querySelector(".indicator.active").style.background = "rgba(255,255,255,0.5)";
     document.querySelector(".side-nav li>a").style.color = "white";
     for(i=0; i<indicator.length; i++){
       indicator[i].style.borderColor = "rgba(255,255,255,1)";
     }
   }
-    if (document.body.scrollTop > (1 * (screenHeight/5)) || document.documentElement.scrollTop > (1 * (screenHeight/5))) {
-      document.querySelector(".icon-scroll").style.opacity = "0";
-    } else {
-      document.querySelector(".icon-scroll").style.opacity = "1";
-    }
+  if (document.body.scrollTop > (1 * (screenHeight/5)) || document.documentElement.scrollTop > (1 * (screenHeight/5))) {
+    document.querySelector(".icon-scroll").style.opacity = "0";
+  } else {
+    document.querySelector(".icon-scroll").style.opacity = "1";
+  }
 });
 
 $(function(){
@@ -90,6 +92,33 @@ $(function(){
 	},function(){
 		timer = setInterval(perpic, 5000);
 		$('.timer .percentage').addClass('gogo');
-	})
+	});
 
-})
+});
+
+
+$(window).scroll(function() {
+		var scrollDistance = $(window).scrollTop();
+
+		// Assign active class to nav links while scolling
+		$('.section').each(function(i) {
+				if (($(this).position().top - (screenHeight/5)) <= scrollDistance) {
+						$('.hide-on-med-and-down .active').removeClass('active');
+    				$('.hide-on-med-and-down a').removeClass('active');
+    				$('.hide-on-med-and-down .active2').removeClass('active2');
+						$('.hide-on-med-and-down .indicator').eq(i).addClass('active2');
+						$('.hide-on-med-and-down a').eq(i).addClass('active');
+				}
+		});
+    if(scrollDistance <= (screenHeight/4)){
+        $('.hide-on-med-and-down .active2').addClass('active');
+        $('.hide-on-med-and-down .active2').removeClass('active2');
+    }
+    if(scrollDistance >= ($('a[name=gallery]').position().top - (screenHeight/4)) && scrollDistance <= ($('a[name=gallery]').position().top + 200)){
+        $('.indicator').each(function(i) {
+          this.style.borderColor = "rgba(255,255,255,1)";
+        })
+        $('.hide-on-med-and-down .active2').addClass('active');
+        $('.hide-on-med-and-down .active2').removeClass('active2');
+    }
+}).scroll();
