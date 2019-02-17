@@ -11,7 +11,7 @@
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link type="text/css" rel="stylesheet" href="css/styles.css">
   <link type="text/css" rel="stylesheet" href="css/icons.css">
@@ -22,34 +22,35 @@
 </head>
 
 <body>
- <div class="navbar-fixed">
+  <a name="home" class="anchor"></a>
+ <div name="navbar section" class="navbar-fixed">
   <nav class="navbar-color">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="images/universitylogo.png" class="logo"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Tech Team</a></li>
-        <li><a href="#">Talk To Us</a></li>
-        <div class="indicator active"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
+        <li><a href="#home" class="active">Home
+          <div class="indicator ind1 active"></div></a></li>
+        <li><a href="#about">About
+          <div class="indicator ind2"></div></a></li>
+        <li><a href="#gallery">Gallery
+          <div class="indicator ind3"></div></a></li>
+        <li><a href="#techteam">Tech Team
+          <div class="indicator ind4"></div></a></li>
+        <li><a href="#contact">Talk To Us
+          <div class="indicator ind5"></div></a></li>
       </ul>
     </div>
   </nav>
-</div>
+ </div>
   <ul class="side-nav" id="mobile-demo">
-   <li><a href="#" class="active">Home</a></li>
-   <li><a href="#">About</a></li>
-   <li><a href="#">Gallery</a></li>
-   <li><a href="#">Tech Team</a></li>
-   <li><a href="#">Talk To Us</a></li>
+   <li><a href="#home" class="active">Home</a></li>
+   <li><a href="#about">About</a></li>
+   <li><a href="#gallery">Gallery</a></li>
+   <li><a href="#techteam">Tech Team</a></li>
+   <li><a href="#contact">Talk To Us</a></li>
   </ul>
-<div id="landingPage">
+ <div id="landingPage" class="section">
   <div class="particles-wrapper">
     <div id="particles-js"></div>
     <img src="images/satlogoGlow.png" id="sat_logo">
@@ -60,9 +61,56 @@
     <div id="border2">
       <div class='icon-scroll'></div>
     </div>
+ </div><br><br>
+ <div style="height: 100vh;">
+ <br><h1 id="aboutTitle">About Satbhav</h1>
+ <div class="about1">
+   <p>Satbhav is the technical association for students in the Department of Computer Science and Applications, Amritapuri Campus. The main motive of the association is to help students improve and nurture their ideas and also to provide them a platform for learning about the latest technologies by conducting hands-on workshops, technical events and talks by our own alumini</p>
+ </div>
+ <div class="about2">
+   <ul class="about-flex1">
+    <li class="item1"><img src="images/circle.png" width="120px"></li>
+    <li class="item2"><img src="images/circle.png" width="120px"></li>
+   </ul>
+   <ul class="about-flex2">
+    <li class="item1"><img src="images/circle.png" width="120px"></li>
+    <li class="item2"><img src="images/circle.png" width="120px"></li>
+    <li class="item1"><img src="images/circle.png" width="120px"></li>
+    <li class="item2"><img src="images/circle.png" width="120px"></li>
+   </ul>
+   <ul class="about-flex3">
+    <li class="item1"><img src="images/circle.png" width="120px"></li>
+    <li class="item2"><img src="images/circle.png" width="120px"></li>
+    <li class="item1"><img src="images/circle.png" width="120px"></li>
+    <li class="item2"><img src="images/circle.png" width="120px"></li>
+    <li class="item2"><img src="images/circle.png" width="120px"></li>
+   </ul>
+ </div><a name="about" class="anchor" id="aboutAnchor"></a>
 </div>
-  <div id="spacer" style="width:100vw; height:100vh; background-color:white;"></div>
-  <div id="spacer" style="width:100vw; height:100vh; background-color:white;"></div>
-
+ <br><a name="gallery" class="anchor" id="aboutAnchor"></a>
+ <h1 align="center">Gallery</h1>
+ <div class="slider-container">
+   <div class="slider">
+ 		 <ul>
+ 			<li>one</li>
+ 			<li>two</li>
+ 			<li>three</li>
+ 			<li><img src="images/satlogo.png"></li>
+ 			<li>five</li>
+ 			<li>six</li>
+ 			<li>seven</li>
+ 		</ul>
+ 	</div>
+ 	<div class="sliderControl"></div>
+ 	<div class="timer">
+ 		<div class="percentage">
+ 			<div class="percentage0"></div>
+ 			<div class="percentage1"></div>
+ 			<div class="percentage2"></div>
+ 			<div class="percentage3"></div>
+ 			<div class="percentage4"></div>
+ 		</div>
+   </div>
+ </div><br><br><br>
 </body>
 </html>

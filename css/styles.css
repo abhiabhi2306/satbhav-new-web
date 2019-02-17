@@ -1,4 +1,10 @@
-
+html{
+  scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  -webkit-overflow-x: hidden;
+  width: 100vw;
+}
 nav{
   background: rgba(200,200,200,0.3);
 }
@@ -16,16 +22,15 @@ nav ul li a{
   padding: 0px 40px 0px 40px;
 }
 nav ul li a:hover{
-  background-color: rgba(0,0,0,0);
-  text-decoration: underline;
+  background-color: rgba(0,0,0,0.5);
 }
 nav ul li .active{
-  text-decoration: underline;
+  background-color: rgba(255,255,255,0.2);
 }
 nav a.button-collapse{
   visibility: hidden;
 }
-@media only screen and (max-width: 993px){
+@media only screen and (max-width: 1024px){
 nav a.button-collapse {
   visibility: visible;
     display: block;
@@ -41,7 +46,7 @@ nav a.button-collapse {
   width: 40vw;
 }
 .side-nav li>a{
-  color: white !important;
+  color: white;
   text-align: right;
 }
 .indicator{
@@ -52,36 +57,43 @@ nav a.button-collapse {
   width: 15px;
   height: 15px;
   background-color: rgba(0,0,0,0);
-  border-color: rbga(0,0,0,1);
+  border-color: rgba(255,255,255,1);
   border-style: solid;
   border-width: thin;
   top: 30vh;
+  transition: 1s;
 }
-.indicator:nth-of-type(1){
+.indicator.ind1{
   margin-top: 0px;
 }
-.indicator:nth-of-type(2){
+.indicator.ind2{
   margin-top: 30px;
 }
-.indicator:nth-of-type(3){
+.indicator.ind3{
   margin-top: 60px;
 }
-.indicator:nth-of-type(4){
+.indicator.ind4{
   margin-top: 90px;
 }
-.indicator:nth-of-type(5){
+.indicator.ind5{
   margin-top: 120px;
 }
 .indicator.active{
   background-color: rgba(255,255,255,0.5);
 }
+.indicator.active2{
+  background-color: rgba(0,0,0,0.5);
+}
+.indicator:hover{
+  background-color: rgba(255,100,100,0.5);
+}
 
 #landingPage{
   display: block;
-  position: absolute;
+  position: relative;
   width: 100vw;
   height: 90vh;
-  top: 0;
+  margin-top: -80px;
   background: rgb(214,202,44);
   background: url(../images/landingBKG.svg);
   background-attachment: fixed;
@@ -147,3 +159,204 @@ height: 80vh;
   width: 100%;
   height: 80px;
 }
+#aboutAnchor{
+  margin-top: -25vh;
+  display: block;
+}
+#aboutTitle{
+  margin-left: 40px;
+}
+.about1{
+height: auto;
+margin-bottom: 25vh;
+  width: 40vw;
+  display: inline;
+  float: left;
+  background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("../images/satlogoGlow.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.about1 > p{
+  font-weight: bold;
+  font-size: 18px;
+  padding: 40px 0 0 40px;
+  text-align: justify;
+}
+.about2{
+height: auto;
+  width: 60vw;
+  margin-bottom: 25vh;
+  display: inline;
+  float: left;
+}
+@media only screen and (max-width: 1024px){
+.about1{
+  width: 100vw;
+  height: auto;
+  display: inline-block;
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url("../images/satlogoGlow.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.about1 > p{
+  padding: 10px;
+}
+.about2{
+  width: 100vw;
+  height: auto;
+  display: inline-block;s
+}
+.about2 img{
+  width: 10vw;
+}
+}
+.about-flex1{
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.about-flex2{
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.about-flex3{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+	.slider-container{
+    transform: translate(-25%, 0%);
+		width: 200%;
+		overflow: hidden;
+		background-color: #0B1013;
+		background-size: cover;
+	}
+	.slider{
+		width: 500px;
+		height: 205px;
+		position: relative;
+		margin: auto;
+		padding-top: 5%;
+		perspective: 1000px;
+	}
+	.slider ul{
+		height: 205px;
+		position: relative;
+		left: -900px;
+	}
+	.slider li{
+		width: 500px;
+		height: 305px;
+		float: left;
+		box-sizing: border-box;
+		padding: 5px;
+		cursor: pointer;
+		transform: rotateY(-60deg);
+		transition: .6s;
+		overflow: hidden;
+		border: 1px solid #8D742A;
+    color: #8D742A;
+    text-align: center;
+    line-height: 205px;
+    text-transform: upcase;
+    text-transform: uppercase;
+    font-size: 36px;
+	}
+	.slider li img{
+		width: 100%;
+		height: auto;
+	}
+	.slider li:nth-child(4){
+		width: 300px;
+		transform: rotateY(0);
+		transition: .6s;
+	}
+	.slider li:nth-child(1), .slider li:nth-child(2), .slider li:nth-child(3){
+		transform: rotateY(60deg);
+	}
+	.sliderControl{
+		width: 500px;
+		margin:20px auto;
+		text-align: center;
+	}
+	.sliderControl a{
+		display:inline-block;
+		width: 50px;
+		height: 5px;
+		background-color:#333;
+		margin-right: 10px;
+		cursor:pointer;
+		transition: .6s;
+	}
+	.sliderControl a:nth-child(4){
+		background-color:#F6C555;
+	}
+	.timer{
+			width: 20px;
+			height: 20px;
+			border-radius:50%;
+			border:3px solid #222;
+			background-color:#222;
+			position:relative;
+			margin: 0 49%;
+			overflow:hidden;
+		}
+		.percentage{
+			position:absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+		.percentage0{
+			width: 20px;
+			height: 20px;
+			margin-bottom: 3px;
+		}
+		.percentage1, .percentage2, .percentage3, .percentage4{
+			width: 0;
+			height: 0;
+			border-radius:50%;
+		}
+		.percentage1{
+			border-right:10px solid #222;
+			border-left:10px solid #222;
+			border-top:10px solid rgba(246, 197, 85, 0.3);
+			border-bottom:10px solid #222;
+			border-radius:50%;
+			margin-bottom: 3px;
+		}
+		.percentage2{
+			border-right:10px solid rgba(246, 197, 85, 0.4);
+			border-left:10px solid #222;
+			border-top:10px solid rgba(246, 197, 85, 0.4);
+			border-bottom:10px solid #222;
+			margin-bottom: 3px;
+		}
+		.percentage3{
+			border-right:10px solid rgba(246, 197, 85, 0.6);
+			border-left:10px solid #222;
+			border-top:10px solid rgba(246, 197, 85, 0.6);
+			border-bottom:10px solid rgba(246, 197, 85, 0.6);
+			margin-bottom: 3px;
+		}
+		.percentage4{
+			border-right:10px solid rgba(246, 197, 85, 0.8);
+			border-left:10px solid rgba(246, 197, 85, 0.8);
+			border-top:10px solid rgba(246, 197, 85, 0.8);
+			border-bottom:10px solid rgba(246, 197, 85, 0.8);
+		}
+		.gogo{
+			animation: tick-tock 5s steps(5, end) infinite;
+		}
+		@keyframes tick-tock {
+  			to {
+    		transform: translateY(-115px);
+  			}
+		}
