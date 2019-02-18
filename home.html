@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="css/materialize.min.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link type="text/css" rel="stylesheet" href="css/styles.css">
@@ -23,22 +23,22 @@
 
 <body>
   <a name="home" class="anchor"></a>
- <div name="navbar section" class="navbar-fixed">
+ <div name="navbar" class="navbar-fixed">
   <nav class="navbar-color">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img src="images/universitylogo.png" class="logo"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+        <div class="indicator ind1 active"></div>
+          <div class="indicator ind2"></div>
+          <div class="indicator ind3"></div>
+          <div class="indicator ind4"></div>
+          <div class="indicator ind5"></div>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#home" class="active">Home
-          <div class="indicator ind1 active"></div></a></li>
-        <li><a href="#about">About
-          <div class="indicator ind2"></div></a></li>
-        <li><a href="#gallery">Gallery
-          <div class="indicator ind3"></div></a></li>
-        <li><a href="#techteam">Tech Team
-          <div class="indicator ind4"></div></a></li>
-        <li><a href="#contact">Talk To Us
-          <div class="indicator ind5"></div></a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#techteam">Tech Team</a></li>
+        <li><a href="#contact">Talk To Us</a></li>
       </ul>
     </div>
   </nav>
@@ -57,10 +57,11 @@
     <span><p>Build on Values|Enhance Potential</p>
     <p>Department of Computer Science and Application</p><span>
   </div>
-    <div id="border"></div>
-    <div id="border2">
-      <div class='icon-scroll'></div>
+    <div class="border"></div>
+    <div class="border2">
+      <a href="#about"><div class='icon-scroll'></div></a>
     </div>
+    <a href="facebook.com"><img src="images/face.png" class="social"></a>
  </div><br><br>
  <div style="height: 100vh;" class="section">
  <br><h1 id="aboutTitle">About Satbhav</h1>
@@ -85,10 +86,10 @@
     <li class="item2"><img src="images/circle.png" width="120px"></li>
     <li class="item2"><img src="images/circle.png" width="120px"></li>
    </ul>
- </div><a name="about" class="anchor section" id="aboutAnchor"></a>
+ </div><a name="about" class="anchor" id="aboutAnchor"></a>
 </div>
  <br><a name="gallery" class="anchor" id="aboutAnchor"></a>
- <h1 align="center">Gallery</h1><br>
+ <h1 align="center" class="section">Gallery</h1><br>
  <div class="slider-container">
    <div class="slider">
  		 <ul>
@@ -111,7 +112,32 @@
  			<div class="percentage4"></div>
  		</div>
    </div>
- </div><br><br><br>
- <div class="spacer section"></div>
+ </div>
+ <div class="spacer section"><a name="techteam" class="anchor" id="aboutAnchor"></a></div>
+ <div><a name="contact" class="anchor" id="aboutAnchor"></a>
+   <form name="contactUs" class="contactForm">
+     <h1>Talk to Us</h1>
+     <div class="underline"></div>
+     <div class="row">
+     <div class="input-field col s6">
+      <input value="" id="name" type="text" name="name" class="validate">
+      <label class="active" for="first_name2">Name</label>
+     </div>
+    <div class="input-field col s6">
+     <input value="" id="email" type="email" name="email" class="validate">
+     <label class="active" for="first_name2">E-mail</label>
+    </div>
+   </div>
+   <div class="input-field col s6">
+    <textarea id="textarea1" style="height: 12rem" name="comment" class="materialize-textarea"></textarea>
+    <label class="active" for="first_name2">Comments</label>
+   </div>
+   <button class="btn submit waves-effect waves-light right" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+   </button>
+   </form>
+ </div>
+ <div class="border" style="margin-top: 10px;"></div>
+ <div class="border2"></div>
 </body>
 </html>

@@ -34,7 +34,7 @@ particlesJS("particles-js", {
       "distance": 150,
       "color": "#fff",
       "opacity": 0.3,
-      "width": 1
+      "width": 2
     },
     "move": {
       "enable": true,
