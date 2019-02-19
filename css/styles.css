@@ -45,16 +45,20 @@ nav a.button-collapse {
     background-color: transparent;
 }
 .side-nav{
-  margin-top: 20vh;
+  margin-top: 30vh;
   background: none;
   box-shadow: none;
-  width: 40vw;
+  width: 50vw;
   display: block;
   position: fixed;
 }
 .side-nav li>a{
   color: white;
   text-align: right;
+  line-height: 0;
+  height: 22px;
+  margin-top: 8px;
+  padding: 0 50px;
 }
 .indicator{
   display: block;
@@ -395,7 +399,8 @@ height: auto;
   background: rgb(214,202,44);
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/landingBKG.svg);
   color: white;
-  width: 40%;
+  width: 90%;
+  max-width: 600px;
   height: 550px;
   border: 1px solid white;
   box-shadow: 0 0 20px 5px black;
@@ -435,4 +440,8 @@ height: auto;
 .btn.submit{
   background-color: rgba(0,0,0,0);
   border-bottom: 1px solid #FFF;
+}
+.border2 > p{
+  margin: 0 0 0 50px;
+  font-size: 1.2em;
 }

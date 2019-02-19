@@ -20,17 +20,19 @@ function offset(el) {
 window.addEventListener("scroll", function(){
   console.log(document.documentElement.scrollBottom);
   var indicator = document.querySelectorAll(".indicator");
+  var sidemenu = document.querySelectorAll(".side-nav li>a");
   if (document.body.scrollTop > (0.8 * (screenHeight/2)) || document.documentElement.scrollTop > (0.8 * (screenHeight/2))) {
     document.querySelector(".navbar-color").style.backgroundImage = " url(images/landingBKG.svg)";
-    document.querySelector(".side-nav li>a").style.color = "black";
     for(i=0; i<indicator.length; i++){
       indicator[i].style.borderColor = "rgba(0,0,0,1)";
+      sidemenu[i].style.color = "black";
     }
   } else {
     document.querySelector(".navbar-color").style.backgroundImage = "";
     document.querySelector(".side-nav li>a").style.color = "white";
     for(i=0; i<indicator.length; i++){
       indicator[i].style.borderColor = "rgba(255,255,255,1)";
+      sidemenu[i].style.color = "white";
     }
   }
   if (document.body.scrollTop > (1 * (screenHeight/5)) || document.documentElement.scrollTop > (1 * (screenHeight/5))) {
@@ -105,19 +107,21 @@ $(window).scroll(function() {
 		$('.section').each(function(i) {
 				if (($(this).position().top - (screenHeight/5)) <= scrollDistance) {
 						$('.nav-wrapper .active').removeClass('active');
-    				$('.nav-wrapper a').removeClass('active');
     				$('.nav-wrapper .active2').removeClass('active2');
 						$('.nav-wrapper .indicator').eq(i).addClass('active2');
-						$('.nav-wrapper a').eq(i).addClass('active');
+						$('.nav-wrapper a').eq(i+7).addClass('active');
 				}
 		});
     if(scrollDistance <= (screenHeight/4)){
         $('.nav-wrapper .active2').addClass('active');
         $('.nav-wrapper .active2').removeClass('active2');
     }
-    if(scrollDistance >= ($('a[name=gallery]').position().top - (screenHeight/4)) && scrollDistance <= ($('a[name=gallery]').position().top + 200)){
+    if(scrollDistance >= ($('.slider-container').position().top - 200) && scrollDistance <= ($('.slider-container').position().top + 200)){
         $('.indicator').each(function(i) {
           this.style.borderColor = "rgba(255,255,255,1)";
+        })
+        $('.side-nav li>a').each(function(i) {
+          this.style.color = "white";
         })
         $('.nav-wrapper .active2').addClass('active');
         $('.nav-wrapper .active2').removeClass('active2');
