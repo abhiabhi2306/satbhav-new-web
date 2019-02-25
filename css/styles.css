@@ -212,6 +212,7 @@ height: auto;
   margin-bottom: 25vh;
   display: inline;
   float: left;
+  margin-top: -100px;
 }
 @media only screen and (max-width: 1024px){
 .about1{
@@ -228,11 +229,25 @@ height: auto;
 .about2{
   width: 100vw;
   height: auto;
-  display: inline-block;s
+  display: inline-block;
 }
 .about2 img{
   width: 10vw;
 }
+}
+.flex-title{
+  display: flex;
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  font-size: 18px;
+}
+.about2 p{
+  text-align: center;
+  margin: 0;
+}
+.about2 img{
+margin: 0 10px 0 10px;
 }
 .about-flex1{
   width: 80%;
@@ -437,11 +452,137 @@ height: auto;
 .input-feild .active{
   color: #FFF;
 }
-.btn.submit{
+.submit{
   background-color: rgba(0,0,0,0);
+  border: none;
   border-bottom: 1px solid #FFF;
+  padding: 10px 40px;
 }
 .border2 > p{
   margin: 0 0 0 50px;
   font-size: 1.2em;
+}
+.sat_container{
+  display: block;
+  position: absolute;
+  right: 25vw;
+  margin-top: 370px;
+}
+.btn{
+  color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
+  box-shadow: 0 0 0 0;
+  margin-left: -80px;
+
+}
+.toggle {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn {
+  width: 12vw;
+  position: absolute;
+  pointer-events: none;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.md-36{
+  width: 16vw;
+}
+.btn:not(:first-child) {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  z-index: -2;
+
+  -webkit-transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
+  transition: all 0.6s cubic-bezier(.87,-.41,.19,1.44);
+}
+
+.btn:nth-child(6) {top:30px;-webkit-transition-delay: 0s;transition-delay: 0s}
+.btn:nth-child(7) {top:30px;left:0px;-webkit-transition-delay: 0.1s;transition-delay: 0.1s}
+.btn:nth-child(8) {left:0px;;-webkit-transition-delay: 0.2s;;transition-delay: 0.2s}
+.btn:nth-child(9) {top:30px;left:0px;-webkit-transition-delay: 0.3s;transition-delay: 0.3s}
+.btn:nth-child(2) {top:30px;-webkit-transition-delay: 0.4s;transition-delay: 0.4s;left:0;}
+.btn:nth-child(3) {top:30px;left:0px;-webkit-transition-delay: 0.5s;transition-delay: 0.5s}
+.btn:nth-child(4) {left:0px;-webkit-transition-delay: 0.6s;transition-delay: 0.6s}
+.btn:nth-child(5) {top:30px;left:0px;-webkit-transition-delay: 0.7s;transition-delay: 0.7s}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(2) {
+  top:-13.888vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(3) {
+  top:-11.666vw;
+  left:11.666vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(4) {
+  left:13.888vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(5) {
+  top :11.666vw;
+  left:11.666vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(6) {
+  top:13.888vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(7) {
+  top:11.666vw;
+  left:-11.666vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(8) {
+  left:-13.888vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+input#toggle:checked ~ #show-menu .btn:nth-child(9) {
+  top:-11.666vw;
+  left:-11.666vw;
+  opacity:1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.menuBtn {
+  transition: all 0.3s ease;
+    border-radius: 100%;
+}
+
+input#toggle:checked ~ #show-menu .btn .menuBtn {
+  transform: scale(1.3);
 }

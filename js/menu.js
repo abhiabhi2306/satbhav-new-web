@@ -1,4 +1,4 @@
-
+bttn = document.getElementById("toggle");
 screenWidth = window.screen.width;
 screenHeight = window.screen.height;
 window.onload = function(){
@@ -126,6 +126,9 @@ $(window).scroll(function() {
         $('.nav-wrapper .active2').addClass('active');
         $('.nav-wrapper .active2').removeClass('active2');
     }
+    if(scrollDistance >= ($('.sat_container').position().top - 200) && scrollDistance <= ($('.sat_container').position().top + 100)){
+        bttn.checked = true;
+    } else { bttn.checked = false; }
 	  var scrollHeight = $(document).height();
 	  var scrollPosition = $(window).height() + $(window).scrollTop();
 	  if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
