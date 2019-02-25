@@ -135,3 +135,11 @@ $(window).scroll(function() {
       $(".social").css("transform", "translate(0, 0)");
     }
 }).scroll();
+
+setInterval(function(){
+mouseX = window.event.pageX;
+mouseY = window.event.pageY;
+tooltip = document.getElementById("tooltip");
+tooltip.style.left = mouseX+"px";
+tooltip.style.top = mouseY+"px";
+},10);

@@ -26,7 +26,7 @@ particlesJS("particles-js", {
         "enable": true,
         "speed": 4,
         "size_min": 1,
-        "sync": false
+        "sync": true
       }
     },
     "line_linked": {
@@ -34,7 +34,7 @@ particlesJS("particles-js", {
       "distance": 150,
       "color": "#fff",
       "opacity": 0.3,
-      "width": 2
+      "width": 1
     },
     "move": {
       "enable": true,
