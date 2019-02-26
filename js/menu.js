@@ -1,6 +1,7 @@
 bttn = document.getElementById("toggle");
 screenWidth = window.screen.width;
 screenHeight = window.screen.height;
+tooltip = document.getElementById("tooltip");
 window.onload = function(){
   window.scrollTo(0,0);
 }
@@ -18,7 +19,6 @@ function offset(el) {
     return rect.top + scrollTop;
 }
 window.addEventListener("scroll", function(){
-  console.log(document.documentElement.scrollBottom);
   var indicator = document.querySelectorAll(".indicator");
   var sidemenu = document.querySelectorAll(".side-nav li>a");
   if (document.body.scrollTop > (0.8 * (screenHeight/2)) || document.documentElement.scrollTop > (0.8 * (screenHeight/2))) {
@@ -136,10 +136,15 @@ $(window).scroll(function() {
     }
 }).scroll();
 
-setInterval(function(){
-mouseX = window.event.pageX;
-mouseY = window.event.pageY;
-tooltip = document.getElementById("tooltip");
-tooltip.style.left = mouseX+"px";
-tooltip.style.top = mouseY+"px";
-},10);
+document.querySelector(".slider").addEventListener('mousemove', function(event){
+    x = event.clientX;
+    y = event.clientY;
+    if ( typeof x !== 'undefined' ){
+        tooltip.style.visibility = "visible";
+        tooltip.style.left = x + "px";
+        tooltip.style.top = y + 10 + "px";
+    }
+}, false);
+document.querySelector(".slider").addEventListener('mouseout', function(event){
+  tooltip.style.visibility = "hidden";
+});

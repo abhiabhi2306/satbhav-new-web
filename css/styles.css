@@ -526,8 +526,10 @@ input#toggle:checked ~ #show-menu .btn .menuBtn {
 }
 #tooltip{
   display: block;
-  position: absolute;
-  width: 100px;
-  height: 100px;
+  position: fixed;
+  z-index: 9999;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
   background-color: black;
 }
