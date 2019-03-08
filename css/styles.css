@@ -278,6 +278,9 @@ margin: 0 10px 0 10px;
   margin: 10px 0 10px 0;
   padding-left: 460px !important;
 }
+.contactForm{
+  transform: translateX(-50%) !important;
+}
 }
 h1.section{
   display: inline-block;
@@ -355,7 +358,7 @@ h1.section{
 .contactForm{
   display: block;
   position: relative;
-  transform: translateX(-50%);
+  transform: translateX(-30%);
   margin: 0 50% 0 50%;
   background: rgb(214,202,44);
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/landingBKG.svg);
