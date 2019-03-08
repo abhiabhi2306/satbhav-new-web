@@ -73,27 +73,27 @@ $(function(){
 setInterval(function(){
   switch(nowLi){
     case 0:
-      $('#tooltip').html("<p>item 1 description</p>");
+      $('#tooltip').html("<p>Faculty</p>");
       iframesrc = "";
       break;
     case 1:
-      $('#tooltip').html("<p>item 2 description");
+      $('#tooltip').html("<p>Previous Workshops</p>");
       iframesrc = "";
       break;
     case 2:
-      $('#tooltip').html("<p>item 3 description");
+      $('#tooltip').html("<p>Previous Workshops</p>");
       iframesrc = "";
       break;
     case 3:
-      $('#tooltip').html("<p>item 4 description");
+      $('#tooltip').html("<p>Previous Workshops</p>");
       iframesrc = "";
       break;
     case 4:
-      $('#tooltip').html("<p>item 5 description");
+      $('#tooltip').html("<p>Previous Workshops</p>");
       iframesrc = "";
       break;
     case 5:
-      $('#tooltip').html("<p>item 6 description");
+      $('#tooltip').html("<p>Previous Workshops</p>");
       iframesrc = "";
       break;
   }
