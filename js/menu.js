@@ -2,6 +2,7 @@ bttn = document.getElementById("toggle");
 screenWidth = window.screen.width;
 screenHeight = window.screen.height;
 tooltip = document.getElementById("tooltip");
+iframesrc = "";
 window.onload = function(){
   window.scrollTo(0,0);
 }
@@ -69,12 +70,51 @@ $(function(){
 		$('.slider li').eq(0).css({'left':'-60px'});
 	})
 
+setInterval(function(){
+  switch(nowLi){
+    case 0:
+      $('#tooltip').html("<p>item 1 description</p>");
+      iframesrc = "";
+      break;
+    case 1:
+      $('#tooltip').html("<p>item 2 description");
+      iframesrc = "";
+      break;
+    case 2:
+      $('#tooltip').html("<p>item 3 description");
+      iframesrc = "";
+      break;
+    case 3:
+      $('#tooltip').html("<p>item 4 description");
+      iframesrc = "";
+      break;
+    case 4:
+      $('#tooltip').html("<p>item 5 description");
+      iframesrc = "";
+      break;
+    case 5:
+      $('#tooltip').html("<p>item 6 description");
+      iframesrc = "";
+      break;
+  }
+}, 500);
 
+	$('.selector').click(function(){
+    $('.galFrame').attr("src", iframesrc);
+    $('.shade').css({'visibility':'visible'});
+    $('.galFrame').css({'visibility':'visible'});
+    $('.galFrame').css({'transform':'scale(1)'});
+  });
+	$('.shade').click(function(){
+    $('.shade').css({'visibility':'hidden'});
+    $('.galFrame').css({'visibility':'hidden'});
+    $('.galFrame').css({'transform':'scale(0)'});
+  });
 	function sliderChange(){
 		$('.slider ul').stop(true, false).animate({left: sliderWidth * nowLi * -1}, 500);
 	}
 
-	var timer = setInterval(perpic, 5000);
+	var timer = setInterval(perpic, 2000);
 
 	function perpic(){
 		console.log( 'nowLi = ' + nowLi)
@@ -142,9 +182,51 @@ document.querySelector(".slider").addEventListener('mousemove', function(event){
     if ( typeof x !== 'undefined' ){
         tooltip.style.visibility = "visible";
         tooltip.style.left = x + "px";
-        tooltip.style.top = y + 10 + "px";
+        tooltip.style.top = y + 20 + "px";
     }
 }, false);
 document.querySelector(".slider").addEventListener('mouseout', function(event){
   tooltip.style.visibility = "hidden";
 });
+
+//================FORM TO SPREADSHEET==========================================
+(function($){
+	$.fn.serializeObject = function () {
+		"use strict";
+
+		var result = {};
+		var extend = function (i, element) {
+			var node = result[element.name];
+
+	// If node with same name exists already, need to convert it to an array as it
+	// is a multi-value field (i.e., checkboxes)
+
+			if ('undefined' !== typeof node && node !== null) {
+				if ($.isArray(node)) {
+					node.push(element.value);
+				} else {
+					result[element.name] = [node, element.value];
+				}
+			} else {
+				result[element.name] = element.value;
+			}
+		};
+
+		$.each(this.serializeArray(), extend);
+		return result;
+	};
+})(jQuery);
+var $form = $('form#contactform'),
+    url = 'https://script.google.com/macros/s/AKfycbxsqA5BHq-de2kIwP30R2F2YQoDjNRIwt4h4AL6EgVhP7ISClt6/exec'
+
+$('.submit').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject(),
+  })
+  $('.submit').html("Message Sent");
+  $('.submit').css({'pointer-events' : 'none'});
+})
